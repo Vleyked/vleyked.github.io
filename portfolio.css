@@ -1,50 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Cid - Data Engineer</title>
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/Vleyked/vleyked.github.io/main/portfolio.css">
-</head>
-<body>
+/* Reset and universal styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+}
 
-<header id="portfolio-header">
-    <h1>Victor Cid</h1>
-    <p>Data Engineer</p>
-</header>
+body {
+    background-color: #f4f4f4;
+}
 
-<nav>
-    <a href="#portfolio-header" class="nav-link" data-scroll-to="potfolio-header">Home</a>
-    <a href="#projects" class="nav-link" data-scroll-to="potfolio-header">Projects</a>
-    <a href="#contact" class="nav-link" data-scroll-to="potfolio-header">Contact</a>
-    <button id="theme-toggle">Toggle Theme</button>
-</nav>
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2em;
+}
 
-<main>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Victor Cid, a passionate Data Engineer with over 5 years of experience...</p>
-    </section>
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #444;
+    padding: 10px 0;
+}
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <!-- Sample project; can be repeated as necessary -->
-        <div class="project">
-            <h3>Project Name</h3>
-            <p>Description of the project...</p>
-        </div>
-    </section>
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me at: <a>mailto:victor.cid@email.com</p>
-    </section>
-</main>
+.nav-link:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
 
-<footer id="portfolio-footer">
-    <p>&copy; 2023 Victor Cid</p>
-</footer>
+main {
+    padding: 20px;
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+h2 {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #333;
+}
+
+.project {
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header, nav, main, footer {
+    animation: fadeIn 1s forwards;
+}
+
+/* Adding delays for each section to stagger the animations */
+nav {
+    animation-delay: 0.2s;
+}
+
+main {
+    animation-delay: 0.4s;
+}
+
+footer {
+    animation-delay: 0.6s;
+}
+
+body.dark-theme {
+    background-color: #222;
+    color: #f4f4f4;
+}
+
+body.dark-theme header,
+body.dark-theme nav,
+body.dark-theme footer{
+    background-color: #111;
+}
+
+body.dark-theme .project {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-theme h2::before {
+    background-color: #f4f4f4;
+}
+
+#theme-toggle {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 5px 7px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #666;
+}
+
